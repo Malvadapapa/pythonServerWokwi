@@ -32,7 +32,7 @@ def add_data():
             with conn.cursor() as cursor:
                 cursor.execute("INSERT INTO led_log (timestamp, led_status) VALUES (NOW(), %s)", (led_status,))
             conn.commit()
-        return jsonify({'message': 'Information saved successfully'}), 201
+        return jsonify({'message': 'La informacion se guardo correctamente en la base de datos'}), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
